@@ -11,12 +11,17 @@ namespace simulador_array
             {
                 Console.WriteLine(item);
             }
-            Console.WriteLine(readTableCell(tableArr, 2, 5));
+            Console.WriteLine(readTableCell(tableArr, 2, 3));
+            Console.WriteLine(writeTableCell(tableArr, 2, 3, 25));
+            foreach (var item in tableArr)
+            {
+                Console.WriteLine(item);
+            }
         }
 
-        static int[] declareTable(int rows, int columns)
+        static int[] declareTable(int row, int column)
         {
-            int size = rows * columns;
+            int size = row * column;
             int[] tableArr = new int[size];
             for (int i = 0; i < size; i++)
             {
@@ -30,9 +35,11 @@ namespace simulador_array
             return array[(2 * row) + column];
         }
 
-        /*static writeTableCell(int[] array,  int row, int column)
+        static int writeTableCell(int[] array,  int row, int column, int value)
         {
-
-        }*/
+            int placeHolder = array[(2 * row) + column];
+            array[(2 * row) + column] = value;
+            return placeHolder;
+        }
     }
 }
