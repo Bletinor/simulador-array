@@ -11,7 +11,7 @@ namespace simulador_array
             {
                 Console.WriteLine(item);
             }
-            Console.WriteLine(readTableCell(tableArr, 2, 4));
+            Console.WriteLine(readTableCell(tableArr, 2, 5));
         }
 
         static int[] declareTable(int rows, int columns)
@@ -27,10 +27,10 @@ namespace simulador_array
 
         static int readTableCell(int[] array, int row, int column)
         {
-            return array[row * column];
+            return array[(2 * row) + column];
         }
 
-        /*static writeTableCell()
+        /*static writeTableCell(int[] array,  int row, int column)
         {
 
         }*/
